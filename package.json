@@ -1,12 +1,30 @@
 {
-  "name": "promise-all",
+  "name": "daftacademy-promises",
   "version": "1.0.0",
-  "description": "",
+  "author": "Jakub Mandra",
+  "homepage": "https://rotarepmi.github.io/daftacademy-promises/",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "build": "rm -r dist && webpack --config webpack.config.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "start": "webpack-dev-server --open"
   },
-  "author": "Jakub Mandra",
-  "license": "ISC"
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.3"
+  }
 }
